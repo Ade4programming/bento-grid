@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "dmsans", sans-serif;
+  font-family: "DMSans", sans-serif;
   src: url(assets/fonts/static/DMSans-Regular.ttf);
 }
 
@@ -45,7 +45,7 @@
 
 @layer base {
   html {
-    font-family: "dmsans";
+    font-family: "dmsans", sans-serif;
   }
 
   body {
@@ -115,7 +115,7 @@
   figure {
     order: var(--image-order);
   }
-  figcaption,
+  figcaption
   img {
     order: var(--image-order);
   }
@@ -184,7 +184,7 @@
 
     img {
       --image-width: 70%;
-      margin-bottom: -2.5rem;
+      margin-block-end: -2.5rem;
     }
 
     @media screen and (min-width: 60em) {
