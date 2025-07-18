@@ -51,7 +51,7 @@
 
   body {
     background-color: var(--off-white);
-    margin: clamp(1rem, 1.375em);
+    margin: clamp(1rem,1.375rem, 2.375em);
     font-size: var(--fs-normal);
   }
 }
