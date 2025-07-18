@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'DMSans', sans-serif;
+  font-family: 'DMSans';
   src: url(assets/fonts/static/DMSans-Regular.ttf);
-  format: 'truetype';
+  
 }
 
 :root {
