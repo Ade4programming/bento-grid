@@ -1,0 +1,319 @@
+@font-face {
+  font-family: "dmsans";
+  src: url(assets/fonts/static/DMSans-Regular.ttf);
+}
+
+:root {
+  --Primary-subdue: hsl(254, 88%, 96%);
+  --Primary-base: hsl(256, 67%, 59%);
+  --accent-subdue: hsl(31, 66%, 93%);
+  --accent-base: hsl(39, 100%, 71%);
+
+  --White: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 9%, 96%);
+  --Black: hsl(0, 0%, 7%);
+
+  --fs-normal: 1.125rem;
+  --fs-medium: 2.25rem;
+  --fs-medium-large: 2.8rem;
+  --fs-large: 3rem;
+  --fs-xlg: 4rem;
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  h1,
+  h2 {
+    font-size: var(--heading-font-size, var(--fs-normal));
+    line-height: var(--heading-line-height,0.9);
+
+    span {
+      font-style: var(--span-style, italic);
+      color: var(--span-clr, var(--accent-base));
+    }
+  }
+}
+
+@layer base {
+  html {
+    font-family: "dmsans";
+  }
+
+  body {
+    background-color: var(--off-white);
+    margin: 22px;
+    font-size: var(--fs-normal);
+  }
+}
+
+@layer layout {
+  main {
+    max-inline-size: 1200px;
+    margin-inline: auto;
+    display: grid;
+    gap: 2rem;
+
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven"
+      "eight";
+
+       @media (width > 600px) {
+      grid-template-areas:
+        "one one"
+        "two three"
+        "four seven"
+        "four six"
+        "five eight";
+    }
+
+    @media (width > 960px) {
+      grid-template-areas:
+        "seven one one four"
+        "seven two three four"
+        "eight two three four"
+        "eight six five five";
+    }
+  }
+
+  main > * {
+    color: var(--article-card-foreground-clr, var(--Black));
+    background-color: var(--article-card-background-clr, var(--White));
+    padding: var(--article-card-padding);
+    border-radius: var(--article-card-border-radius, 0.5rem);
+    font-size: var(--article-card-font-size, var(--fs-normal));
+
+    overflow: clip;
+
+    display: grid;
+    
+    gap: var(--article-card-grid-gap, 1rem);
+    align-items: var(--article-card-vertical-alignment, start);
+    justify-items: var(--article-card-horizontal-alignment, start);
+    text-align: var(--article-card-horizontal-alignment, start);
+    text-wrap: var(--text-balance, balance);
+  }
+  article img {
+    width: var(--image-width, 100%);
+    max-width: var(--image-width, 100%);
+  }
+
+  figure {
+    order: var(--image-order);
+  }
+  figcaption,
+  img {
+    order: var(--image-order);
+  }
+
+  main > :nth-child(1) {
+    --article-card-background-clr: var(--Primary-base);
+    --article-card-foreground-clr: var(--White);
+    --article-card-padding: 34px;
+    --article-card-grid-gap: 1.5rem;
+    --article-card-horizontal-alignment: center;
+
+    --heading-font-size: var(--fs-medium-large);
+    --heading-line-height: 0.9;
+    --span-clr: var(--accent-base);
+
+    --image-width: 70%;
+
+    grid-area: one;
+
+    span:nth-of-type(1) {
+      --span-style: none;
+    }
+    span:nth-of-type(2) {
+      --span-clr: var(--White);
+    }
+
+     @media screen and (min-width: 960px) {
+      --article-card-padding: 3rem;
+      --heading-font-size: var(--fs-xlg);
+
+      img {
+        --image-width: 50%;
+      }
+    }
+  }
+
+  main > :nth-child(2) {
+    --article-card-padding: 1rem;
+
+    --image-order: -1;
+    --heading-font-size: 22px;
+
+    grid-area: two;
+
+    img {
+      filter: drop-shadow(0 0 0.5rem rgb(13, 12, 19, 0.3));
+      border-radius: 100vw;
+    }
+
+    @media screen and (min-width: 960px) {
+      --heading-font-size: 36px;
+
+      img {
+        --image-width: 145%;
+      }
+    }
+  }
+
+  main > :nth-child(3) {
+    --article-card-background-clr: var(--accent-base);
+    --article-card-padding: 1rem;
+
+    --heading-font-size: 22px;
+
+    grid-area: three;
+
+    img {
+      --image-width: 70%;
+      margin-bottom: -2.5rem;
+    }
+
+    @media screen and (min-width: 960px) {
+      --heading-font-size: 36px;
+      --article-card-padding: 1.5rem;
+
+
+      img {
+        --image-width: 100%;
+        margin-bottom: -7rem;
+      }
+    }
+  }
+
+  main > :nth-child(4) {
+    --article-card-background-clr: var(--Primary-subdue);
+    --article-card-horizontal-alignment: center;
+    --article-card-padding: 1.5rem;
+    --article-card-grid-gap: 1rem;
+
+    --heading-font-size: 22px;
+
+    grid-area: four;
+
+    figure {
+      display: grid;
+      gap: 1rem;
+    }
+
+     @media screen and (min-width: 960px) {
+     --article-card-horizontal-alignment: start;
+--heading-font-size: var(--fs-medium);
+
+      img {
+        --image-width: 180%;
+       
+      }
+    }
+  }
+
+  main > :nth-child(5) {
+    --article-card-background-clr: var(--Primary-base);
+    --article-card-foreground-clr: var(--White);
+    --article-card-horizontal-alignment: center;
+    --article-card-padding: 1.5rem;
+
+    --heading-font-size: 32px;
+
+    --image-width: 80%;
+    --image-order: -1;
+
+    grid-area: five;
+
+    @media screen and (min-width: 960px) {
+      --article-card-vertical-alignment: center;
+      --article-card-horizontal-alignment: start;
+      --article-card-grid-gap: 0rem;
+      --image-width: 100%;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  main > :nth-child(6) {
+    --article-card-padding: 1.5rem;
+    --article-card-grid-gap: 0rem;
+
+    --heading-font-size: 42px;
+
+    grid-area: six;
+
+    img {
+      --image-width: 60%;
+      margin-top: 1rem;
+    }
+     @media screen and (min-width: 960px) {
+     
+--heading-font-size: var(--fs-xlg);
+
+      img {
+        --image-width: 100%;
+       
+      }
+    }
+  }
+  main > :nth-child(7) {
+    --article-card-background-clr: var(--accent-subdue);
+    --article-card-grid-gap: 1rem;
+    --article-card-padding: 1.5rem;
+
+    --heading-font-size: 29px;
+    --span-clr: var(--Primary-base);
+
+    grid-area: seven;
+
+    --image-width: 65%;
+
+    @media screen and (min-width: 960px) {
+      --article-card-vertical-alignment: center;
+      --heading-font-size: var(--fs-medium);
+      --image-width: 100%;
+       --article-card-padding: 2rem;
+
+      /* Still working here!! */
+    }
+  }
+  main > :nth-child(8) {
+    --article-card-background-clr: var(--accent-base);
+    --article-card-padding: 1rem;
+    --article-card-grid-gap: 1rem;
+
+    --heading-font-size: 28px;
+    --heading-line-height: 0.9;
+
+    grid-area: eight;
+
+    --image-width: 75%;
+
+    @media screen and (min-width: 960px) {
+     
+      --heading-font-size: var(--fs-medium-large);
+      --article-card-padding: 1.5rem;
+      --article-card-grid-gap: 3rem;
+
+      img {
+        --image-width: 100%;
+       
+      }
+    }
+  }
+
+    
+}
