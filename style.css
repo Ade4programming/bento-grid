@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "dmsans";
+  font-family: "dmsans", sans-serif;
   src: url(assets/fonts/static/DMSans-Regular.ttf);
 }
 
@@ -50,7 +50,7 @@
 
   body {
     background-color: var(--off-white);
-    margin: 22px;
+    margin: 1.375em;
     font-size: var(--fs-normal);
   }
 }
@@ -72,7 +72,7 @@
       "seven"
       "eight";
 
-       @media (width > 600px) {
+       @media screen and (min-width: 37.5em) {
       grid-template-areas:
         "one one"
         "two three"
@@ -81,7 +81,7 @@
         "five eight";
     }
 
-    @media (width > 960px) {
+    @media all and (min-width: 60em) {
       grid-template-areas:
         "seven one one four"
         "seven two three four"
@@ -142,7 +142,7 @@
       --span-clr: var(--White);
     }
 
-     @media screen and (min-width: 960px) {
+     @media screen and (min-width: 60em) {
       --article-card-padding: 3rem;
       --heading-font-size: var(--fs-xlg);
 
@@ -165,7 +165,7 @@
       border-radius: 100vw;
     }
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 60em) {
       --heading-font-size: 36px;
 
       img {
@@ -187,7 +187,7 @@
       margin-bottom: -2.5rem;
     }
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 60em) {
       --heading-font-size: 36px;
       --article-card-padding: 1.5rem;
 
@@ -214,7 +214,7 @@
       gap: 1rem;
     }
 
-     @media screen and (min-width: 960px) {
+     @media screen and (min-width: 60em) {
      --article-card-horizontal-alignment: start;
 --heading-font-size: var(--fs-medium);
 
@@ -238,7 +238,7 @@
 
     grid-area: five;
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 60em) {
       --article-card-vertical-alignment: center;
       --article-card-horizontal-alignment: start;
       --article-card-grid-gap: 0rem;
@@ -259,7 +259,7 @@
       --image-width: 60%;
       margin-top: 1rem;
     }
-     @media screen and (min-width: 960px) {
+     @media screen and (min-width: 60em) {
      
 --heading-font-size: var(--fs-xlg);
 
@@ -281,7 +281,7 @@
 
     --image-width: 65%;
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 60em) {
       --article-card-vertical-alignment: center;
       --heading-font-size: var(--fs-medium);
       --image-width: 100%;
@@ -302,7 +302,7 @@
 
     --image-width: 75%;
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 60em) {
      
       --heading-font-size: var(--fs-medium-large);
       --article-card-padding: 1.5rem;
